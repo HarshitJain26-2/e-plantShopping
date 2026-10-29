@@ -40,8 +40,9 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   LANDING PAGE (Task 3 & 4)
+   LANDING PAGE BACKGROUND IMAGE (Step 5 - Mandatory .background-image class)
    -------------------------------------------------------------------------- */
+.background-image,
 .landing-page {
   position: relative;
   min-height: 100vh;
@@ -210,7 +211,7 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   ABOUT US SECTION (Task 2)
+   ABOUT US SECTION (Step 4)
    -------------------------------------------------------------------------- */
 .about-us-section {
   padding: 3.5rem 0;
@@ -343,7 +344,7 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   NAVBAR (Task 6 & 7)
+   NAVBAR (Reusable component with className navbar)
    -------------------------------------------------------------------------- */
 .navbar {
   position: sticky;
@@ -411,6 +412,7 @@ body {
   padding: 0.5rem 0.85rem;
   border-radius: var(--radius-md);
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .nav-link:hover {
@@ -435,6 +437,7 @@ body {
   font-size: 0.925rem;
   transition: all 0.2s ease;
   position: relative;
+  cursor: pointer;
 }
 
 .nav-cart-btn:hover {
@@ -457,7 +460,7 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   PRODUCT LISTING PAGE (Task 6)
+   PRODUCT LISTING PAGE (Step 8)
    -------------------------------------------------------------------------- */
 .product-list-page {
   min-height: 100vh;
@@ -683,7 +686,8 @@ body {
   transform: translateY(-1px);
 }
 
-.add-to-cart-btn.added {
+.add-to-cart-btn.added,
+.add-to-cart-btn:disabled {
   background: #e2e8f0;
   color: #64748b;
   cursor: not-allowed;
@@ -691,7 +695,7 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   CART PAGE (Task 7)
+   CART PAGE (Step 9)
    -------------------------------------------------------------------------- */
 .cart-page {
   min-height: 100vh;
@@ -734,6 +738,8 @@ body {
   padding: 0.5rem 1rem;
   border-radius: var(--radius-full);
   background: var(--primary-light);
+  border: none;
+  cursor: pointer;
   transition: all 0.2s ease;
 }
 
@@ -874,7 +880,8 @@ body {
   color: var(--dark);
 }
 
-.item-delete-btn {
+.item-delete-btn,
+.cart-item-delete {
   background: none;
   border: none;
   color: #94a3b8;
@@ -884,7 +891,8 @@ body {
   transition: all 0.2s ease;
 }
 
-.item-delete-btn:hover {
+.item-delete-btn:hover,
+.cart-item-delete:hover {
   color: #ef4444;
   background: #fee2e2;
 }
@@ -923,7 +931,8 @@ body {
   padding: 0.2rem;
 }
 
-.qty-btn {
+.qty-btn,
+.cart-item-button {
   width: 30px;
   height: 30px;
   display: flex;
@@ -938,12 +947,14 @@ body {
   transition: all 0.15s ease;
 }
 
-.qty-btn:hover {
+.qty-btn:hover,
+.cart-item-button:hover {
   background: var(--primary);
   color: #ffffff;
 }
 
-.qty-value {
+.qty-value,
+.cart-item-quantity_value {
   padding: 0 0.9rem;
   font-weight: 700;
   font-size: 0.95rem;
@@ -960,7 +971,8 @@ body {
   margin-right: 0.35rem;
 }
 
-.subtotal-amount {
+.subtotal-amount,
+.cart-item-total {
   font-weight: 800;
   color: var(--primary);
   font-size: 1.1rem;
@@ -1026,7 +1038,8 @@ body {
   color: var(--dark);
 }
 
-.grand-total-amount {
+.grand-total-amount,
+.total_cart_amount {
   font-size: 1.6rem;
   font-weight: 800;
   color: var(--primary);

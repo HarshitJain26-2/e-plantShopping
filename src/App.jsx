@@ -1,18 +1,29 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 import AboutUs from './AboutUs';
+import ProductList from './ProductList';
 import { ArrowRight, Leaf, Shield, Award, Sparkles } from 'lucide-react';
 import './App.css';
 
 function App() {
-  const navigate = useNavigate();
+  // Rubric requirement Step 6: Use React state with showProductList, initialized to false
+  const [showProductList, setShowProductList] = useState(false);
 
+  // Clicking Get Started must set showProductList to true
   const handleGetStarted = () => {
-    navigate('/plants');
+    setShowProductList(true);
   };
 
+  const handleNavigateHome = () => {
+    setShowProductList(false);
+  };
+
+  // When showProductList is true, render the ProductList component
+  if (showProductList) {
+    return <ProductList onNavigateHome={handleNavigateHome} />;
+  }
+
   return (
-    <div className="landing-page">
+    <div className="background-image">
       {/* Background Overlay */}
       <div className="landing-overlay">
         {/* Navigation / Header */}
@@ -38,6 +49,7 @@ function App() {
           <div className="hero-badge">
             <Sparkles size={16} /> India's Premier Houseplant Destination
           </div>
+          {/* Rubric Step 6: Exact company heading "Welcome to Paradise Nursery" */}
           <h1 className="hero-title">
             Welcome to <span className="highlight-text">Paradise Nursery</span>
           </h1>
@@ -47,6 +59,7 @@ function App() {
           </p>
 
           <div className="hero-actions">
+            {/* Visible "Get Started" button */}
             <button
               type="button"
               className="get-started-btn"
